@@ -5,7 +5,8 @@ const Pen = (function () {
             id = '',
             label = '',
             variant = 'main',
-            className = ''
+            className = '',
+            fenceImage = null
         } = options;
 
         const pen = document.createElement('div');
@@ -38,7 +39,7 @@ const Pen = (function () {
         fence.className = 'pen-fence';
 
         const fenceImg = document.createElement('img');
-        fenceImg.src = Config.images.elements.penMain;
+        fenceImg.src = fenceImage || Config.images.elements.penMain;
         fenceImg.alt = 'Pen fence';
         fenceImg.draggable = false;
         fenceImg.onerror = function () {
@@ -111,12 +112,13 @@ const Pen = (function () {
         return { pen, surface, content, grid };
     }
 
-    function createCategoryPen(color, label) {
+    function createCategoryPen(color, label, fenceImage = null) {
         const { pen, surface, content } = create({
             id: `${color}-pen`,
             label,
             variant: color,
-            className: `pen--${color}`
+            className: `pen--${color}`,
+            fenceImage
         });
 
         const grid = document.createElement('div');

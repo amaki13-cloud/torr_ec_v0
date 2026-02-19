@@ -15,6 +15,16 @@
     min-height: 95vh;
 }
 
+/* Hide game title across all game modes */
+.game-container .game-header .game-title {
+    display: none;
+}
+
+/* Hide all pen names (problem labels) across all pens */
+.problem-label {
+    display: none;
+}
+
 .start-container {
     width: 100%;
     max-width: 700px;

@@ -20,7 +20,7 @@ const AntinomyRenderer = (function () {
         const categoryRow = document.createElement('div');
         categoryRow.className = 'category-row';
 
-        const { pen: greenPen, grid: greenGrid } = Pen.createCategoryPen('green', 'Green Box');
+        const { pen: greenPen, grid: greenGrid } = Pen.createCategoryPen('green', 'Green Box', 'images/elements/Pen_1_Green.svg');
         greenPen.classList.add('pen--green');
 
         greenSection.items.forEach((item, index) => {
@@ -43,7 +43,7 @@ const AntinomyRenderer = (function () {
         vsIndicator.className = 'vs-indicator';
         vsIndicator.textContent = 'VS';
 
-        const { pen: redPen, grid: redGrid } = Pen.createCategoryPen('red', 'Red Box');
+        const { pen: redPen, grid: redGrid } = Pen.createCategoryPen('red', 'Red Box', 'images/elements/Pen_1_Red.svg');
         redPen.classList.add('pen--red');
 
         redSection.items.forEach((item, index) => {
@@ -60,8 +60,6 @@ const AntinomyRenderer = (function () {
                 redGrid.appendChild(slot);
             });
         });
-
-        redGrid.appendChild(createQuestionMarkAttributes());
 
         categoryRow.appendChild(greenPen);
         categoryRow.appendChild(vsIndicator);

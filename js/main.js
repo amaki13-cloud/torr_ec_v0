@@ -175,7 +175,7 @@ const App = (function () {
         if (!titleEl) return;
 
         const typeConfig = Config.gameTypes[type.toLowerCase()];
-        titleEl.textContent = typeConfig?.title || '"What Does Not Belong?"';
+        titleEl.textContent = typeConfig?.title || '""';
     }
 
     function updateProblemCounter(problemData, currentIndex) {
